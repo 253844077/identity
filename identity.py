@@ -17,7 +17,7 @@ class Identity:
                                , use_angle_cls=True
                                , use_space_char=False
                                , rec_model_dir=Config.rec_model_dir
-                               , det_model_dir=Config.det_mode_dir)
+                               , det=Config.det_mode_dir)
     def front(self,path):
         result=self.ocr_engine.ocr(path,det=True,
                                 rec=True,
@@ -31,6 +31,8 @@ class Identity:
             nation="畲"
 
         birthday=self.getBirthday(id)
+
+        os.remove(path)
 
         return {"name":name,"gender":gender,"nation":nation,"birthday":birthday,"id":id}
 
