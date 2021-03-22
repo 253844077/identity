@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <title>测试页面</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="./static/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <script src="./static/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./static/jquery/jquery.min-3.6.0.js"></script>
+
+<!--    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.0-beta2/css/bootstrap.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.0-beta2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
+    <style>
+        .valign{
+            display: flex;
+            align-items: center;
+        }
+        .h30{
+            margin-left: 30px;
+        }
+        .v30{
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<form method="POST" action="/identity" enctype ="multipart/form-data">
+    <div class="form-group">
+        <label class="col-form-label"><h5>类型</h5></label>
+        <div class="valign">
+            <label class="radio-inline col-sm-2">
+              <input type="radio" name="file_type" id="file_type1" value="file"> 上传图片
+            </label>
+            <label class="radio-inline col-sm-2 h30">
+              <input type="radio" name="file_type" id="file_type2" value="url"> 路径
+            </label>
+        </div>
+    </div>
+    <div class="form-group v30">
+        <label class="col-form-label"><h5>正反面</h5></label>
+        <div class="valign">
+            <label class="radio-inline col-sm-2">
+              <input type="radio" name="side" id="side1" value="front"> 正面
+            </label>
+            <label class="radio-inline col-sm-2 h30">
+              <input type="radio" name="side" id="side2" value="back"> 反面
+            </label>
+        </div>
+    </div>
+    <div id="file-row" class="form-group v30">
+        <label class="col-form-label"><h5>文件</h5></label>
+        <div class="valign">
+            <input type="file" name="file" id="file">
+        </div>
+    </div>
+    <div id="url-row" class="form-group v30">
+        <label class="col-form-label"><h5>路径</h5></label>
+        <div class="valign">
+            <input type="text" class="form-control" name="url" id="url">
+        </div>
+    </div>
+    <div class=" v30">
+        <div class="">
+            <button type="submit" class="btn btn-primary">提交</button>
+        </div>
+    </div>
+</form>
+</div>
+
+
+<!--
+    <input type="text" value="front" name="side">
+    <input type="text" value="url" name="file_type">
+    <input type="text" value="D:/1.png" name="url">
+    <input type="file" value="" name="file">
+    <input type="submit" value="Go">-->
+
+</body>
+</html>
+<script>
+    $(function () {
+        var filelTypeFunc=function(){
+            console.log('222'+$("input[name='file_type']:checked").val())
+            $("#file-row").hide();
+            $("#url-row").hide();
+            if($("input[name='file_type']:checked").val()=='file'){
+                $("#file-row").show();
+            }
+            if($("input[name='file_type']:checked").val()=='url'){
+                $("#url-row").show();
+            }
+        }
+        filelTypeFunc()
+        $("input:radio[name='file_type']").change(function () {
+            console.log($(this).val())
+            filelTypeFunc()
+        })
+
+        $("form").submit(function () {
+            var fileType=$("input[name='file_type']:checked").val();
+            if(!fileType){
+                alert("请选择类型")
+                return false;
+            }
+            if(!$("input[name='side']:checked").val()){
+                alert("请选择正反面")
+                return false;
+            }
+            if(fileType=='url'){
+                if(!$("input[name='url']").val()){
+                    alert("请输入身份证链接")
+                    return false;
+                }
+            }else if(fileType=='file'){
+                if(!$("input[name='file']").val()){
+                    alert("请上传身份证图片")
+                    return false;
+                }
+            }
+        })
+    })
+</script>
