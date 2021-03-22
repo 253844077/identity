@@ -61,8 +61,8 @@ url         url方式：如果file_type是url，则此字段必传
     }
 }
 ```
-```json
 反面响应
+```json
 {
     errmsg: "success",
     errno: 0,
