@@ -96,4 +96,5 @@ is_gpu=False            #使用gpu
 rec_model_dir = "./inference/ch_ppocr_server_v2.0_rec_infer"  #文字识别模型
 det_mode_dir = "./inference/ch_ppocr_server_v2.0_det_infer"   #detection模型
 secret = None           #密码，None不使用密码，字符串既是密码
+port = 8800             #端口
 ```
