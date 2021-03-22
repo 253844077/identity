@@ -36,7 +36,7 @@ identity-release
 
 ### 启动后的测试页面
 http://localhost:8800/page
-
+![image](https://github.com/xuwuwei/identity/blob/main/test_page.jpg)
 ### api调用
 POST form表单提交
 
