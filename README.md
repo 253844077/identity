@@ -47,28 +47,29 @@ side        正反面：front 正面，back背面
 file        文件上传：如果file_type是file，则此字段必传
 url         url方式：如果file_type是url，则此字段必传
 ```
-响应
+正面响应
 ```json
-正面
 {
-errmsg: "success",
-errno: 0,
-result: {
-    birthday: "1990年11月12日",
-    gender: "女",
-    id: "42xxxxxxxxxxxxxxxxx3",
-    name: "徐无为",
-    nation: "汉"
+    errmsg: "success",
+    errno: 0,
+    result: {
+        birthday: "1990年11月12日",
+        gender: "女",
+        id: "42xxxxxxxxxxxxxxxxx3",
+        name: "徐无为",
+        nation: "汉"
     }
 }
-反面
+```
+```json
+反面响应
 {
-errmsg: "success",
-errno: 0,
-result: {
-    end_date: "2036.02.03",
-    sign: "北京中关村公安局",
-    start_date: "2016.02.03"
+    errmsg: "success",
+    errno: 0,
+    result: {
+        end_date: "2036.02.03",
+        sign: "北京中关村公安局",
+        start_date: "2016.02.03"
     }
 }
 ```
