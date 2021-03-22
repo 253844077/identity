@@ -127,9 +127,6 @@ class Identity:
                 name = line[1][0]
         return name
 
-    # api接口
-    # 配置
-    ''''''
     def getName(self,result):
         pos=None
         for idx in range(len(result)):

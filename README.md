@@ -1,5 +1,5 @@
 ### 基于paddle的身份证识别
-identity是一个基于paddle的中文身份证识别
+identity是一个基于paddle的中文身份证图片识别
 
 ### 安装
 ```shell script
@@ -82,6 +82,7 @@ errno错误码
 1000      other error.
 1003      secret error.
 1004      not support image type.
+1005      identification error.
 ```
 
 ### gpu调用

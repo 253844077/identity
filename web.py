@@ -62,10 +62,13 @@ def identity():
         file_path = os.path.join(tmpdir, filename)
         file.save(file_path)
 
-    if side == 'front':
-        return {"errno":0,"errmsg":"success","result":identitier.front(file_path)}
-    elif side == 'back':
-        return {"errno":0,"errmsg":"success","result":identitier.back(file_path)}
+    try:
+        if side == 'front':
+            return {"errno":0,"errmsg":"success","result":identitier.front(file_path)}
+        elif side == 'back':
+            return {"errno":0,"errmsg":"success","result":identitier.back(file_path)}
+    except:
+        return {'errno': 1005, 'errmsg':'identification error.'}
 
     return {'errno': 1000, 'errmsg':'other error.'}
 
