@@ -14,7 +14,7 @@ import requests
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "ADn4fgcR1o89tpKRnfuIVRmQUHBsBkRKMpcC8EqAkNkilnDZ42HlNj"
-app.config['UPLOAD_FOLDER'] = "/tmp"
+# app.config['UPLOAD_FOLDER'] = "/tmp"
 identitier=Identity()
 
 @app.route("/page")
