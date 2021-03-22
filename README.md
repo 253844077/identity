@@ -82,6 +82,7 @@ errno错误码
 1000      other error.
 1003      secret error.
 1004      not support image type.
+1005      identification error.
 ```
 
 ### gpu调用
