@@ -1,5 +1,5 @@
 ### 基于paddle的身份证识别
-identity是一个基于paddle的中文身份证识别
+identity是一个基于paddle的中文身份证图片识别
 
 ### 安装
 ```shell script
